@@ -1,0 +1,19 @@
+# Build outputs
+src/**/bin/
+src/**/obj/
+tests/**/bin/
+tests/**/obj/
+
+# IDEs
+.idea/
+.vscode/
+*.user
+*.suo
+
+#Test results
+TestResults/
+*.coverage
+*.coveragexml
+
+# Launch settings
+src/GeolocationAPI/Properties/launchSettings.json

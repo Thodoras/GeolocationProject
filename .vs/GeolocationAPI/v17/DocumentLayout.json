@@ -1,0 +1,140 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Programming\\C#\\GeolocationProject-main\\GeolocationProject-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C020BB83-2AF7-4D8A-8CB5-BAC0147BC872}|src\\GeolocationAPI\\GeolocationAPI.csproj|d:\\programming\\c#\\geolocationproject-main\\geolocationproject-main\\src\\geolocationapi\\utils\\settings\\disettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C020BB83-2AF7-4D8A-8CB5-BAC0147BC872}|src\\GeolocationAPI\\GeolocationAPI.csproj|solutionrelative:src\\geolocationapi\\utils\\settings\\disettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C020BB83-2AF7-4D8A-8CB5-BAC0147BC872}|src\\GeolocationAPI\\GeolocationAPI.csproj|d:\\programming\\c#\\geolocationproject-main\\geolocationproject-main\\src\\geolocationapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C020BB83-2AF7-4D8A-8CB5-BAC0147BC872}|src\\GeolocationAPI\\GeolocationAPI.csproj|solutionrelative:src\\geolocationapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C020BB83-2AF7-4D8A-8CB5-BAC0147BC872}|src\\GeolocationAPI\\GeolocationAPI.csproj|d:\\programming\\c#\\geolocationproject-main\\geolocationproject-main\\src\\geolocationapi\\geolocationapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{C020BB83-2AF7-4D8A-8CB5-BAC0147BC872}|src\\GeolocationAPI\\GeolocationAPI.csproj|solutionrelative:src\\geolocationapi\\geolocationapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C020BB83-2AF7-4D8A-8CB5-BAC0147BC872}|src\\GeolocationAPI\\GeolocationAPI.csproj|d:\\programming\\c#\\geolocationproject-main\\geolocationproject-main\\src\\geolocationapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C020BB83-2AF7-4D8A-8CB5-BAC0147BC872}|src\\GeolocationAPI\\GeolocationAPI.csproj|solutionrelative:src\\geolocationapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C020BB83-2AF7-4D8A-8CB5-BAC0147BC872}|src\\GeolocationAPI\\GeolocationAPI.csproj|d:\\programming\\c#\\geolocationproject-main\\geolocationproject-main\\src\\geolocationapi\\api\\http\\controllers\\geolocationipcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C020BB83-2AF7-4D8A-8CB5-BAC0147BC872}|src\\GeolocationAPI\\GeolocationAPI.csproj|solutionrelative:src\\geolocationapi\\api\\http\\controllers\\geolocationipcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C020BB83-2AF7-4D8A-8CB5-BAC0147BC872}|src\\GeolocationAPI\\GeolocationAPI.csproj|d:\\programming\\c#\\geolocationproject-main\\geolocationproject-main\\src\\geolocationapi\\geolocationapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C020BB83-2AF7-4D8A-8CB5-BAC0147BC872}|src\\GeolocationAPI\\GeolocationAPI.csproj|solutionrelative:src\\geolocationapi\\geolocationapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.302\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Programming\\C#\\GeolocationProject-main\\GeolocationProject-main\\src\\GeolocationAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\GeolocationAPI\\appsettings.json",
+              "ToolTip": "D:\\Programming\\C#\\GeolocationProject-main\\GeolocationProject-main\\src\\GeolocationAPI\\appsettings.json",
+              "RelativeToolTip": "src\\GeolocationAPI\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-13T13:30:51.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DISettings.cs",
+              "DocumentMoniker": "D:\\Programming\\C#\\GeolocationProject-main\\GeolocationProject-main\\src\\GeolocationAPI\\Utils\\Settings\\DISettings.cs",
+              "RelativeDocumentMoniker": "src\\GeolocationAPI\\Utils\\Settings\\DISettings.cs",
+              "ToolTip": "D:\\Programming\\C#\\GeolocationProject-main\\GeolocationProject-main\\src\\GeolocationAPI\\Utils\\Settings\\DISettings.cs*",
+              "RelativeToolTip": "src\\GeolocationAPI\\Utils\\Settings\\DISettings.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAB8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T13:30:45.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GeolocationIPController.cs",
+              "DocumentMoniker": "D:\\Programming\\C#\\GeolocationProject-main\\GeolocationProject-main\\src\\GeolocationAPI\\API\\Http\\Controllers\\GeolocationIPController.cs",
+              "RelativeDocumentMoniker": "src\\GeolocationAPI\\API\\Http\\Controllers\\GeolocationIPController.cs",
+              "ToolTip": "D:\\Programming\\C#\\GeolocationProject-main\\GeolocationProject-main\\src\\GeolocationAPI\\API\\Http\\Controllers\\GeolocationIPController.cs",
+              "RelativeToolTip": "src\\GeolocationAPI\\API\\Http\\Controllers\\GeolocationIPController.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAqwCcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T13:21:55.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GeolocationAPI",
+              "DocumentMoniker": "D:\\Programming\\C#\\GeolocationProject-main\\GeolocationProject-main\\src\\GeolocationAPI\\GeolocationAPI.csproj",
+              "RelativeDocumentMoniker": "src\\GeolocationAPI\\GeolocationAPI.csproj",
+              "ToolTip": "D:\\Programming\\C#\\GeolocationProject-main\\GeolocationProject-main\\src\\GeolocationAPI\\GeolocationAPI.csproj",
+              "RelativeToolTip": "src\\GeolocationAPI\\GeolocationAPI.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-13T13:14:44.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GeolocationAPI.http",
+              "DocumentMoniker": "D:\\Programming\\C#\\GeolocationProject-main\\GeolocationProject-main\\src\\GeolocationAPI\\GeolocationAPI.http",
+              "RelativeDocumentMoniker": "src\\GeolocationAPI\\GeolocationAPI.http",
+              "ToolTip": "D:\\Programming\\C#\\GeolocationProject-main\\GeolocationProject-main\\src\\GeolocationAPI\\GeolocationAPI.http",
+              "RelativeToolTip": "src\\GeolocationAPI\\GeolocationAPI.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-09-13T13:14:22.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Programming\\C#\\GeolocationProject-main\\GeolocationProject-main\\src\\GeolocationAPI\\Program.cs",
+              "RelativeDocumentMoniker": "src\\GeolocationAPI\\Program.cs",
+              "ToolTip": "D:\\Programming\\C#\\GeolocationProject-main\\GeolocationProject-main\\src\\GeolocationAPI\\Program.cs",
+              "RelativeToolTip": "src\\GeolocationAPI\\Program.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T13:14:08.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Microsoft.NET.TargetFrameworkInference.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets",
+              "ViewState": "AQIAAJQAAAAAAAAAAADgv6UAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-09-13T13:05:35.55Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
