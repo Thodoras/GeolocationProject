@@ -8,6 +8,7 @@ tests/**/obj/
 .idea/
 .vscode/
 .vs/
+.DS_Store
 *.user
 *.suo
 
