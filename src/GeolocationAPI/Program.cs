@@ -18,7 +18,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 
-// SQLite DbContext
+// SQL Express DbContext
 builder.Services.AddDbContext<GeolocationAPIDbContext>(options =>
 {
     options.UseSqlServer(settings.GetMSSQLExpressConnectionString());
