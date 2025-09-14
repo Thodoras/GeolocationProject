@@ -121,7 +121,9 @@ docker compose up (optionally --build)
 http://localhost:8080
 ```
 ## Testing
-### 1.Run tests
+### 1. Run tests
 ```bash
+cd tests
+cd GeolocationAPI.Tests
 dotnet test
 ```
