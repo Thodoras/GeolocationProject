@@ -11,6 +11,8 @@ namespace GeolocationAPI.API.Http.DTOs
         public string Latitude { get; set; }
         public string Longitude { get; set; }
 
+        public GetGeolocationIPResponse() { }
+
         public GetGeolocationIPResponse(GeolocationIP geolocationIP)
         {
             IP = geolocationIP.IP.Address;

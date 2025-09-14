@@ -30,7 +30,7 @@ builder.Services.AddScoped<IBatchProcessItemBackgroundRepository, BatchProcessIt
 builder.Services.AddScoped<IBatchProcessBackgroundRepository, BatchProcessRepository>();
 
 // Geolocation API client
-builder.Services.AddScoped<IGeoIPRepository>(provider =>
+builder.Services.AddScoped<IGeoIPService>(provider =>
 {
     var logger = provider.GetRequiredService<ILogger<FreeGeoIPAPI>>();
     var httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();

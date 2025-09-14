@@ -10,11 +10,11 @@ namespace GeolocationAPI.Application.GeolocationIP
     
     public class GeolocationIPService : IGeolocationIPService
     {
-        private readonly IGeoIPRepository _geoIPRepository;
+        private readonly IGeoIPService _geoIPRepository;
         private readonly ILogger<GeolocationIPService> _logger;
 
         public GeolocationIPService(
-            IGeoIPRepository geoIPRepository,
+            IGeoIPService geoIPRepository,
             ILogger<GeolocationIPService> logger
             )
         {

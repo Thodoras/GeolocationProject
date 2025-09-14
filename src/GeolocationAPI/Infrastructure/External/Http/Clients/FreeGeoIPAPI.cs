@@ -5,7 +5,7 @@ using GeolocationAPI.Utils.Exceptions;
 
 namespace GeolocationAPI.Infrastructure.External.Http.Clients
 {
-    public class FreeGeoIPAPI : IGeoIPRepository
+    public class FreeGeoIPAPI : IGeoIPService
     {
         private readonly string _baseURL;
         private readonly string _apiKey;
