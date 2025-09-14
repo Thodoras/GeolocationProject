@@ -37,8 +37,8 @@ builder.Services.AddScoped<IGeoIPService>(provider =>
     var minDelayBetweenRequests = TimeSpan.FromMilliseconds(settings.minDelayBetweenRequestsInMilliseconds);
     var client = httpClientFactory.CreateClient();
     return new FreeGeoIPAPI(
-        "https://api.ipbase.com/v2/info",
-        "ipb_live_5ZP73HQfRdBA3OWr8b4UTmY4E8NyU2ENyTTivCuy",
+        settings.FreeGeoIPURL,
+        settings.FreeGeoIPKey,
         minDelayBetweenRequests,
         client,
         logger

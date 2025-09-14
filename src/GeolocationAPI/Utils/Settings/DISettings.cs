@@ -3,6 +3,8 @@ public class DISettings
     public int MaxConcurrency { get; set; }
     public int UpdateInterval { get; set; }
     public int minDelayBetweenRequestsInMilliseconds { get; set; }
+    public required string FreeGeoIPURL { get; set; }
+    public required string FreeGeoIPKey { get; set; }
 
     public required string MSQLExpressServer { get; set; }
     public required string MSQLExpressDatabase { get; set; }
