@@ -8,6 +8,7 @@ services:
     ports:
       - "8080:80"
     environment:
+      - DOTNET_RUNNING_IN_CONTAINER=true
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Server=sql-server;Database=GeolocationDb;User=sa;Password=YourPassword123;TrustServerCertificate=true;MultipleActiveResultSets=true;
     depends_on:
