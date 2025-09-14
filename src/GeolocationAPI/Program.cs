@@ -18,18 +18,15 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 
-// SQL Express DbContext
 builder.Services.AddDbContext<GeolocationAPIDbContext>(options =>
 {
     options.UseSqlServer(settings.GetMSSQLExpressConnectionString());
 });
 
-// Repository registrations
 builder.Services.AddScoped<IBatchProcessRepository, BatchProcessRepository>();
 builder.Services.AddScoped<IBatchProcessItemBackgroundRepository, BatchProcessItemRepository>();
 builder.Services.AddScoped<IBatchProcessBackgroundRepository, BatchProcessRepository>();
 
-// Geolocation API client
 builder.Services.AddScoped<IGeoIPService>(provider =>
 {
     var logger = provider.GetRequiredService<ILogger<FreeGeoIPAPI>>();
@@ -45,7 +42,6 @@ builder.Services.AddScoped<IGeoIPService>(provider =>
     );
 });
 
-// Batch geolocation services
 builder.Services.AddScoped<IBackgroundGeolocationIPService>(provider =>
 {
     var geoIPService = provider.GetRequiredService<IGeolocationIPService>();
@@ -65,7 +61,6 @@ builder.Services.AddScoped<IBackgroundGeolocationIPService>(provider =>
 });
 builder.Services.AddHostedService<BackgroundGeolocationIPWorker>();
 
-// Core service
 builder.Services.AddScoped<IGeolocationIPService, GeolocationIPService>();
 
 var app = builder.Build();
@@ -76,7 +71,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
