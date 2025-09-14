@@ -11,6 +11,7 @@ public class DISettings
 
     public string GetMSSQLExpressConnectionString()
     {
+        // TODO: add other string
         return $"Server={MSQLExpressServer};Database={MSQLExpressDatabase};Trusted_Connection={MSQLExpressTrustServer};TrustServerCertificate={MSQLExpressTrustServerCertificate}";
     }
 }
