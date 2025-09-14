@@ -1,3 +1,5 @@
+using System.Data.Common;
+
 public class DISettings
 {
     public int MaxConcurrency { get; set; }
@@ -13,7 +15,7 @@ public class DISettings
 
     public string GetMSSQLExpressConnectionString()
     {
-        // TODO: add other string
-        return $"Server={MSQLExpressServer};Database={MSQLExpressDatabase};Trusted_Connection={MSQLExpressTrustServer};TrustServerCertificate={MSQLExpressTrustServerCertificate}";
+        var connectionString = $"Server={MSQLExpressServer};Database={MSQLExpressDatabase};Trusted_Connection={MSQLExpressTrustServer};TrustServerCertificate={MSQLExpressTrustServerCertificate}";
+        return connectionString;
     }
 }
