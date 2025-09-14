@@ -121,7 +121,7 @@ docker compose up (optionally --build)
 http://localhost:8080
 ```
 ## Testing
-### Run tests
+### 1.Run tests
 ```bash
 dotnet test
 ```
