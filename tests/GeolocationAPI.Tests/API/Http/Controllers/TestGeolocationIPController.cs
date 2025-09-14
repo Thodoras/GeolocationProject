@@ -1,16 +1,13 @@
 ﻿using Moq;
 using GeolocationAPI.Application.GeolocationIP;
 using Microsoft.Extensions.Logging;
-using Tests.GeolocationAPI.Mocks;
 using GeolocationAPI.API.Http.Controllers;
 using GeolocationAPI.Application.BackgroundGeolocationIP;
 using Microsoft.AspNetCore.Http;
-using GeolocationAPI.Domain;
-using System.Net;
 using GeolocationAPI.API.Http.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Tests.GeolocationAPI.API.Http.Controllers
+namespace GeolocationAPI.Tests.API.Http.Controllers
 {
     public class TestGeolocationIPController
     {

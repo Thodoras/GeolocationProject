@@ -2,7 +2,7 @@
 using GeolocationAPI.Domain;
 using Moq;
 
-namespace Tests.GeolocationAPI.Mocks
+namespace GeolocationAPI.Tests.Mocks
 {
     public static class MockGeoIPService
     {

@@ -1,7 +1,7 @@
 using GeolocationAPI.Domain;
 using GeolocationAPI.Utils.Exceptions;
 
-namespace Tests.Domain
+namespace GeolocationAPI.Tests.Domain
 {
     public class IPTests
     {
