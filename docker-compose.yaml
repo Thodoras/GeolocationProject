@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  geolocation-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sql-server;Database=GeolocationDb;User=sa;Password=YourPassword123;TrustServerCertificate=true;MultipleActiveResultSets=true;
+    depends_on:
+      - sql-server
+    networks:
+      - geolocation-network
+
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourPassword123
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql-data:/var/opt/mssql
+    networks:
+      - geolocation-network
+
+volumes:
+  sql-data:
+
+networks:
+  geolocation-network:
+    driver: bridge
