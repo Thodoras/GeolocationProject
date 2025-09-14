@@ -6,6 +6,7 @@ using GeolocationAPI.Application.BackgroundGeolocationIP;
 using Microsoft.AspNetCore.Http;
 using GeolocationAPI.API.Http.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using GeolocationAPI.Tests.Mocks;
 
 namespace GeolocationAPI.Tests.API.Http.Controllers
 {
