@@ -46,8 +46,6 @@ namespace GeolocationAPI.Application.BackgroundGeolocationIP
             try
             {
                 var process = await InitializeBatchProcessAsync(ipAddresses);
-
-                // Use Task.Run to avoid blocking the main thread
                 _ = Task.Run(() => ProcessBatchAsync(process.Id, ipAddresses))
                     .ContinueWith(t =>
                     {
