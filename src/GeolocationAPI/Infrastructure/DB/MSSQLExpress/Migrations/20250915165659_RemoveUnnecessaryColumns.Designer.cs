@@ -4,6 +4,7 @@ using GeolocationAPI.Infrastructure.DB.MSSQLExpress.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GeolocationAPI.Infrastructure.DB.MSSQLExpress.Migrations
 {
     [DbContext(typeof(GeolocationAPIDbContext))]
-    partial class GeolocationAPIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250915165659_RemoveUnnecessaryColumns")]
+    partial class RemoveUnnecessaryColumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

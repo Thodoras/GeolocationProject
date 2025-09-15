@@ -131,10 +131,6 @@ cd GeolocationAPI.Tests
 dotnet test
 ```
 
-## Things to consider:
-- The failed and succeeded counters in the response can be derived from the child processes within the batch. This approach is optimal when the request involves a relatively small number of IPs. However, for larger batches, it's more efficient to maintain these counters in separate columns and potentially implement pagination for the child elements.
-In this demo project, the latter approach was chosen to showcase the implementation of interlocking and thread safety.
-
 ## Alternative solution Using Queuing Mechanisms
 An alternative approach that could result in cleaner, more maintainable code�albeit with greater infrastructural effort�would involve introducing a queuing mechanism, such as Amazon SQS. The process would work as follows:
 1. **Initial Request Handling**:
