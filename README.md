@@ -121,9 +121,30 @@ docker compose up (optionally --build)
 http://localhost:8080
 ```
 ## Testing
+
+In this version, a small subset of functionality was tested solely to demonstrate testing patterns. Full test coverage was not the objective.
+
 ### 1. Run tests
 ```bash
 cd tests
 cd GeolocationAPI.Tests
 dotnet test
 ```
+
+## Alternative solution Using Queuing Mechanisms
+An alternative approach that could result in cleaner, more maintainable code—albeit with greater infrastructural effort—would involve introducing a queuing mechanism, such as Amazon SQS. The process would work as follows:
+1. **Initial Request Handling**:
+The GeolocationAPI would receive a request containing a list of IP addresses. It would generate a process UUID, store metadata about the request, and enqueue each IP address along with the associated UUID. It would then return the UUID along with a URL that clients can use to retrieve the results.
+2. **Queue Processing**:
+A background process or worker would consume messages from the queue one by one, each containing a UUID-IP pair. For each IP, it would make a synchronous call to FreeGeoIP to retrieve geolocation data.
+3. **Data Storage**:
+The geolocation results would then be stored in the database. An internal counter would track processed entries. Since this uses an SQL database, incrementing the counter would be atomic and thread-safe.
+### Benefits:
+- Throttling can be managed via the queue's configuration (e.g. controlling message delivery rate).
+- Concurrency and parallelism can be handled by the underlying infrastructure (e.g. Kubernetes, EC2 autoscaling, etc.).
+- Atomic operations (such as counter increments) are supported natively by SQL, avoiding the need for manual locking.
+- Cleaner code with reduced complexity in handling concurrent logic, improving readability and maintainability.
+
+### Drawbacks
+- Requires additional infrastructure setup (queues, workers, deployment configuration).
+- May introduce unnecessary complexity and cost for a small-scale or demo assignment.
