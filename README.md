@@ -132,11 +132,11 @@ dotnet test
 ```
 
 ## Alternative solution Using Queuing Mechanisms
-An alternative approach that could result in cleaner, more maintainable code—albeit with greater infrastructural effort—would involve introducing a queuing mechanism, such as Amazon SQS. The process would work as follows:
+An alternative approach that could result in cleaner, more maintainable codeï¿½albeit with greater infrastructural effortï¿½would involve introducing a queuing mechanism, such as Amazon SQS. The process would work as follows:
 1. **Initial Request Handling**:
 The GeolocationAPI would receive a request containing a list of IP addresses. It would generate a process UUID, store metadata about the request, and enqueue each IP address along with the associated UUID. It would then return the UUID along with a URL that clients can use to retrieve the results.
 2. **Queue Processing**:
-A background process or worker would consume messages from the queue one by one, each containing a UUID-IP pair. For each IP, it would make a synchronous call to FreeGeoIP to retrieve geolocation data.
+An internal would consume messages from the queue asyncronously one by one, each containing a UUID-IP pair. For each IP, it would make a synchronous call to FreeGeoIP to retrieve geolocation data.
 3. **Data Storage**:
 The geolocation results would then be stored in the database. An internal counter would track processed entries. Since this uses an SQL database, incrementing the counter would be atomic and thread-safe.
 ### Benefits:
