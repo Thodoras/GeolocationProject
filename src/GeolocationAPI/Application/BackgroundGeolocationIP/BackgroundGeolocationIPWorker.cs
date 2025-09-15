@@ -15,7 +15,6 @@ namespace GeolocationAPI.Application.BackgroundGeolocationIP
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                // Optional recurring logic here
                 await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
             }
         }
