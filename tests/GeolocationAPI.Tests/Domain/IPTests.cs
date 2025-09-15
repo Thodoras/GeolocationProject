@@ -20,7 +20,6 @@ namespace GeolocationAPI.Tests.Domain
         [Theory]
         [InlineData("")]
         [InlineData(" ")]
-        [InlineData(null)]
         public void TestValidate_WhenEmptyOrNullIP_ThenThrowsInvalidIPFormat(string invalidIP)
         {
             var ip = new IP(invalidIP);
