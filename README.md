@@ -19,6 +19,7 @@ A .NET 8 Web API for IP address geolocation that provides both single IP lookup 
 - **ORM**: Entity Framework Core
 - **Containerization**: Docker & Docker Compose
 - **Testing**: xUnit, Moq, Microsoft.AspNetCore.Mvc.Testing
+- **CI/CD**: GitHub Actions
 
 ## API Endpoints
 
