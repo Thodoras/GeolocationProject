@@ -81,9 +81,9 @@ GET /api/batch/{processId}/status
   ]
 }
 ```
-### More API info can be found in the link below (dev env)
+### More API info can be found in the url below (dev env)
 ```http
-/swagger
+GET /swagger
 ```
 
 ## Getting Started
