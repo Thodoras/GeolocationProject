@@ -34,13 +34,17 @@ namespace GeolocationAPI.Infrastructure.DB.MSSQLExpress.Repositories
         public async Task<BatchProcess> GetDetailedBatchAsync(Guid id)
         {
             var resultModel = await _context.BatchProcesses.
-                Include(b => b.Items).
-                FirstAsync(b => b.Id == id);
-            if (resultModel == null)
-            {
-                _logger.LogWarning("BatchProcess with Id {Id} not found.", id);
-                throw new KeyNotFoundException($"BatchProcess with Id {id} not found.");
-            }
+                Where(b => b.Id == id).
+                Select(b => new BatchProcessModel
+                {
+                    Id = b.Id,
+                    StartedAt = b.StartedAt,
+                    CompletedAt = b.CompletedAt,
+                    Status = b.Status,
+                    ProcessingTime = b.ProcessingTime,
+                    Items = b.Items,
+                    RecordsProcessed = b.Items.Count(i => i.Status != "Pending")
+                }).FirstOrDefaultAsync();
 
             return resultModel.ToDomain();
         }
@@ -65,9 +69,6 @@ namespace GeolocationAPI.Infrastructure.DB.MSSQLExpress.Repositories
             tracked.StartedAt = batchProcess.StartedAt;
             tracked.CompletedAt = batchProcess.CompletedAt;
             tracked.RecordsProcessed = batchProcess.RecordsProcessed;
-            tracked.Successful = batchProcess.Successful;
-            tracked.Failed = batchProcess.Failed;
-            tracked.TotalRecords = batchProcess.TotalRecords;
             tracked.Status = batchProcess.Status.ToString();
             tracked.ProcessingTime = batchProcess.ProcessingTime; 
 

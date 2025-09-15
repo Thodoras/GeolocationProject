@@ -95,8 +95,7 @@ namespace GeolocationAPI.Application.BackgroundGeolocationIP
             }
 
             var processingTimes = new ConcurrentBag<double>();
-            var successful = 0;
-            var failed = 0;
+
 
             var semaphore = new SemaphoreSlim(_maxConcurrency);
             var tasks = new List<Task>();
@@ -113,20 +112,14 @@ namespace GeolocationAPI.Application.BackgroundGeolocationIP
                         var batchProcessRepository = taskScope.ServiceProvider.GetRequiredService<IBatchProcessBackgroundRepository>();
 
                         var startTime = DateTime.UtcNow;
-                        var succeeded = await ProcessSingleIPAsync(processId, ipAddress, batchProcessItemRepository);
+                        await ProcessSingleIPAsync(processId, ipAddress, batchProcessItemRepository);
                         var processingTime = (DateTime.UtcNow - startTime).TotalMilliseconds;
                         processingTimes.Add(processingTime);
 
-                        if (succeeded) Interlocked.Increment(ref successful);
-                        else Interlocked.Increment(ref failed);
-
-                        if ((successful + failed) % _updateInterval == 0)
+                        if ((processingTimes.Count) % _updateInterval == 0)
                         {
                             await UpdateBatchProcessStatisticsAsync(
                                 processId,
-                                successful + failed,
-                                successful,
-                                failed,
                                 processingTimes.Average(),
                                 false,
                                 batchProcessRepository);
@@ -135,7 +128,6 @@ namespace GeolocationAPI.Application.BackgroundGeolocationIP
                     catch (Exception ex)
                     {
                         _logger.LogError(ex, "Error processing IP {IpAddress} in batch {ProcessId}", ipAddress.Address, processId);
-                        Interlocked.Increment(ref failed);
                     }
                     finally
                     {
@@ -151,16 +143,13 @@ namespace GeolocationAPI.Application.BackgroundGeolocationIP
                 var batchProcessRepository = finalScope.ServiceProvider.GetRequiredService<IBatchProcessBackgroundRepository>();
                 await UpdateBatchProcessStatisticsAsync(
                     processId,
-                    successful + failed,
-                    successful,
-                    failed,
                     processingTimes.Any() ? processingTimes.Average() : 0,
                     true,
                     batchProcessRepository);
             }
         }
 
-        private async Task<bool> ProcessSingleIPAsync(
+        private async Task ProcessSingleIPAsync(
             Guid processId,
             IP ipAddress,
             IBatchProcessItemBackgroundRepository itemRepository)
@@ -183,17 +172,10 @@ namespace GeolocationAPI.Application.BackgroundGeolocationIP
                 item.Longitude = geoInfo.Longitude;
                 item.Status = BatchProcessItemStatus.Succeded;
             }
-            catch (InvalidIPFormat ex)
-            {
-                item.Status = BatchProcessItemStatus.Failed;
-                item.ErrorMessage = ex.Message;
-                return false;
-            }
             catch (Exception ex)
             {
                 item.Status = BatchProcessItemStatus.Failed;
                 item.ErrorMessage = ex.Message;
-                return false;
             }
             finally
             {
@@ -201,7 +183,6 @@ namespace GeolocationAPI.Application.BackgroundGeolocationIP
                 await itemRepository.AddAsync(item);
             }
 
-            return true;
         }
 
         private async Task UpdateBatchProcessToProcessing(Guid processId, IBatchProcessBackgroundRepository repo)
@@ -213,13 +194,12 @@ namespace GeolocationAPI.Application.BackgroundGeolocationIP
         }
 
         private async Task UpdateBatchProcessStatisticsAsync(
-            Guid processId, int processed, int succeeded, int failed, double avgTime, bool completed,
+            Guid processId, 
+            double avgTime, 
+            bool completed,
             IBatchProcessBackgroundRepository repo)
         {
             var batch = await repo.GetBatchAsync(processId);
-            batch.RecordsProcessed = processed;
-            batch.Successful = succeeded;
-            batch.Failed = failed;
             batch.ProcessingTime = avgTime;
             if (completed) batch.Status = BatchProcessStatus.Completed;
             await repo.UpdateBatchAsync(batch);
