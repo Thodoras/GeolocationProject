@@ -137,8 +137,6 @@ An alternative approach that could result in cleaner, more maintainable code�a
 The GeolocationAPI would receive a request containing a list of IP addresses. It would generate a process UUID, store metadata about the request, and enqueue each IP address along with the associated UUID. It would then return the UUID along with a URL that clients can use to retrieve the results.
 2. **Queue Processing**:
 An internal would consume messages from the queue asyncronously one by one, each containing a UUID-IP pair. For each IP, it would make a synchronous call to FreeGeoIP to retrieve geolocation data.
-3. **Data Storage**:
-The geolocation results would then be stored in the database. An internal counter would track processed entries. Since this uses an SQL database, incrementing the counter would be atomic and thread-safe.
 ### Benefits:
 - Throttling can be managed via the queue's configuration (e.g. controlling message delivery rate).
 - Concurrency and parallelism can be handled by the framework as well as the underlying infrastructure (e.g. Kubernetes, EC2 autoscaling, etc.).
