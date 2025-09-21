@@ -13,8 +13,8 @@ namespace GeolocationAPI.Infrastructure.External.Http.Clients
         private readonly HttpClient _httpClient;
         private readonly ILogger<FreeGeoIPAPI> _logger;
 
-        private readonly SemaphoreSlim _lock = new SemaphoreSlim(1, 1);
         private DateTime _lastRequestTime = DateTime.UtcNow;
+        private Object _lovk = new Object();
 
         public FreeGeoIPAPI(
             string baseURL,
@@ -48,22 +48,19 @@ namespace GeolocationAPI.Infrastructure.External.Http.Clients
 
         private async Task DelayIfNeededAsync()
         {
-            await _lock.WaitAsync();
-            try
+            TimeSpan delayTime;
+            lock (_lovk)
             {
                 var now = DateTime.UtcNow;
                 var timeSinceLastRequest = now - _lastRequestTime;
                 if (timeSinceLastRequest < _minDelayBetweenRequests)
-                {
-                    await Task.Delay(_minDelayBetweenRequests - timeSinceLastRequest);
-                }
+                    delayTime = _minDelayBetweenRequests - timeSinceLastRequest;
+                else
+                    delayTime = TimeSpan.Zero;
+                _lastRequestTime = now + delayTime;
+            }
 
-                _lastRequestTime = DateTime.UtcNow;
-            }
-            finally
-            {
-                _lock.Release();
-            }
+            await Task.Delay(delayTime);
         }
     }
 }
