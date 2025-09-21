@@ -58,7 +58,6 @@ namespace GeolocationAPI.Infrastructure.External.Http.Clients
                 await Task.Delay(delay);
             }
 
-            // Atomically update the last request time to now
             Interlocked.Exchange(ref _lastRequestTimeTicks, DateTime.UtcNow.Ticks);
         }
     }
